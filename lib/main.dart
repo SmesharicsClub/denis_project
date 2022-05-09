@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Best Music App EVER',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Best Music App EVER'),
     );
   }
 }
@@ -29,37 +29,42 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Image(image: AssetImage('assets/button.png')),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
+          backgroundColor: const Color(0xFF121212),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+        body: ListView(
+          children: [
+            Container(
+              height: 50,
+              color: Colors.red,
+            ),
+            Container(
+              height: 30,
+              child: const Text("Some text"),
+            ),
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  color: const Color(0x4FFD0000),
+                  borderRadius: BorderRadiusDirectional.circular(200)),
+              child: const Center(
+                  child: Text(
+                "Фильтр Чебышева\n3-ого порядка\nпередаёт\nпривет",
+                style: TextStyle(
+                    color: Color(0xFFF70153),
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: "Arial"),
+                textAlign: TextAlign.center,
+              )),
+            )
+          ],
+        ));
   }
 }
