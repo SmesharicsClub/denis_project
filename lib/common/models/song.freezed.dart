@@ -15,30 +15,30 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$User {
+mixin _$Song {
   String get name => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $SongCopyWith<Song> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res>;
+abstract class $SongCopyWith<$Res> {
+  factory $SongCopyWith(Song value, $Res Function(Song) then) =
+      _$SongCopyWithImpl<$Res>;
   $Res call({String name, String url, int id, String author});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$SongCopyWithImpl<$Res> implements $SongCopyWith<$Res> {
+  _$SongCopyWithImpl(this._value, this._then);
 
-  final User _value;
+  final Song _value;
   // ignore: unused_field
-  final $Res Function(User) _then;
+  final $Res Function(Song) _then;
 
   @override
   $Res call({
@@ -69,21 +69,21 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$_SongCopyWith<$Res> implements $SongCopyWith<$Res> {
+  factory _$$_SongCopyWith(_$_Song value, $Res Function(_$_Song) then) =
+      __$$_SongCopyWithImpl<$Res>;
   @override
   $Res call({String name, String url, int id, String author});
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
-      : super(_value, (v) => _then(v as _$_User));
+class __$$_SongCopyWithImpl<$Res> extends _$SongCopyWithImpl<$Res>
+    implements _$$_SongCopyWith<$Res> {
+  __$$_SongCopyWithImpl(_$_Song _value, $Res Function(_$_Song) _then)
+      : super(_value, (v) => _then(v as _$_Song));
 
   @override
-  _$_User get _value => super._value as _$_User;
+  _$_Song get _value => super._value as _$_Song;
 
   @override
   $Res call({
@@ -92,7 +92,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? id = freezed,
     Object? author = freezed,
   }) {
-    return _then(_$_User(
+    return _then(_$_Song(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -115,8 +115,8 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_User with DiagnosticableTreeMixin implements _User {
-  const _$_User(
+class _$_Song with DiagnosticableTreeMixin implements _Song {
+  const _$_Song(
       {required this.name,
       required this.url,
       required this.id,
@@ -134,14 +134,14 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(name: $name, url: $url, id: $id, author: $author)';
+    return 'Song(name: $name, url: $url, id: $id, author: $author)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'User'))
+      ..add(DiagnosticsProperty('type', 'Song'))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('url', url))
       ..add(DiagnosticsProperty('id', id))
@@ -152,7 +152,7 @@ class _$_User with DiagnosticableTreeMixin implements _User {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$_Song &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.url, url) &&
             const DeepCollectionEquality().equals(other.id, id) &&
@@ -169,16 +169,16 @@ class _$_User with DiagnosticableTreeMixin implements _User {
 
   @JsonKey(ignore: true)
   @override
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$_SongCopyWith<_$_Song> get copyWith =>
+      __$$_SongCopyWithImpl<_$_Song>(this, _$identity);
 }
 
-abstract class _User implements User {
-  const factory _User(
+abstract class _Song implements Song {
+  const factory _Song(
       {required final String name,
       required final String url,
       required final int id,
-      final String author}) = _$_User;
+      final String author}) = _$_Song;
 
   @override
   String get name => throw _privateConstructorUsedError;
@@ -190,5 +190,5 @@ abstract class _User implements User {
   String get author => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$_SongCopyWith<_$_Song> get copyWith => throw _privateConstructorUsedError;
 }

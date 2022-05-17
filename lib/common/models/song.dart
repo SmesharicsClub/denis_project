@@ -4,10 +4,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'song.freezed.dart';
 
 @freezed
-abstract class User with _$User {
-  const factory User(
+class Song with _$Song {
+  const factory Song(
       {required String name,
       required String url,
       required int id,
-      @Default('Неизвестен') String author}) = _User;
+      @Default('Неизвестен') String author}) = _Song;
 }
