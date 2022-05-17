@@ -75,7 +75,7 @@ flutter:
   fonts:
     - family: BestMusicApp
       fonts:
-        - asset: assets/fonts/BestMusicApp.ttf
+        - asset: fonts/BestMusicApp.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
