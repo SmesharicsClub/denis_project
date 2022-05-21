@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../best_music_app_icons.dart';
-import '../models/song.dart';
 
 class SongCard extends StatelessWidget {
-  const SongCard({required this.song, Key? key}) : super(key: key);
-
-  final Song song;
+  const SongCard({Key? key}) : super(key: key);
 
   static const songCardColor = Color(0xFFF3E19F);
   static const songCardHeight = 66.0;
@@ -52,14 +49,14 @@ class SongCard extends StatelessWidget {
         children: [
           Container(
               margin: const EdgeInsets.only(top: 15),
-              child: Text(
-                song.name,
+              child: const Text(
+                'Музика - музика',
                 style: _musicTextTheme,
               )),
           Container(
               margin: const EdgeInsets.only(top: 8, bottom: 10),
-              child: Text(
-                song.author,
+              child: const Text(
+                'Исполнитель - полнитель',
                 style: _authorTextTheme,
               ))
         ],
