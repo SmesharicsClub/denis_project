@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'common/screens/main_page_screen.dart';
-import 'profile_page/screens/profile_page.dart';
+import 'common/screens/main_page.dart';
+//import 'profile_page/screens/profile_page.dart';
 
 const String _title = 'Best Music App EVER';
 
@@ -17,6 +17,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const ProfilePage(title: _title),
+        home: MainPage(title: _title),
       );
 }

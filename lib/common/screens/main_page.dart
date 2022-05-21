@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../profile_page/screens/profile_page.dart';
+
 const Color _appBarBackgroundColor = Color(0xFF121212);
 const Color _thirdContainerBoxDecorationColor = Color(0x4FFD0000);
 const String _thirdContainerText =
@@ -46,6 +48,14 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text(widget.title),
         backgroundColor: _appBarBackgroundColor,
+        actions: [
+          IconButton(
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute<ProfilePage>(
+                      builder: (context) => ProfilePage(title: widget.title))),
+              icon: Image.asset('assets/button.png'))
+        ],
       ),
       body: ListView.separated(
           itemCount: 3,
