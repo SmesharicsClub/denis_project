@@ -11,8 +11,10 @@
 ///      fonts:
 ///       - asset: fonts/BestMusicApp.ttf
 ///
-/// 
 ///
+///
+// ignore_for_file: avoid_redundant_argument_values
+
 import 'package:flutter/widgets.dart';
 
 class BestMusicApp {
@@ -21,6 +23,8 @@ class BestMusicApp {
   static const _kFontFam = 'BestMusicApp';
   static const String? _kFontPkg = null;
 
-  static const IconData menu = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData pause = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData menu =
+      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData pause =
+      IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
