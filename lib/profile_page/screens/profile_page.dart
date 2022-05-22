@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'profile_page_colors.dart';
+import '../../common/constants/colors.dart';
 import 'profile_page_strings.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -12,7 +12,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: ProfilePageColors.appBarBackgroundColor,
+        backgroundColor: CommonColors.appBarBackgroundColor,
       ),
       body: Container(
         alignment: Alignment.center,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
 import 'main_page_assets.dart';
 import 'main_page_colors.dart';
 import 'main_page_constants.dart';
@@ -49,7 +50,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: MainPageColors.appBarBackgroundColor,
+        backgroundColor: CommonColors.appBarBackgroundColor,
         actions: [
           IconButton(
               onPressed: () => Navigator.pushNamed(context, '/profile'),
