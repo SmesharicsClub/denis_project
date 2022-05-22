@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-const Color _appBarBackgroundColor = Color(0xFF121212);
-const Color _thirdContainerBoxDecorationColor = Color(0x4FFD0000);
-const String _thirdContainerText =
-    'Фильтр Чебышева\n3-ого порядка\nпередаёт\nпривет';
+import 'main_page_assets.dart';
+import 'main_page_colors.dart';
+import 'main_page_constants.dart';
+import 'main_page_strings.dart';
+
 const TextStyle _thirdContainerTextStyle = TextStyle(
     color: Color(0xFFF70153),
     fontSize: 35,
@@ -22,19 +23,22 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   final containers = [
-    Container(height: 50, color: Colors.red),
     Container(
-      height: 30,
-      child: const Text('Some text'),
+        height: MainPageConstants.firstContainerHeight,
+        color: MainPageColors.firstContainerColor),
+    Container(
+      height: MainPageConstants.secondContainerHeight,
+      child: const Text(MainPageStrings.secondContainerText),
     ),
     Container(
-      height: 200,
+      height: MainPageConstants.thirdContainerHeight,
       decoration: BoxDecoration(
-          color: _thirdContainerBoxDecorationColor,
-          borderRadius: BorderRadiusDirectional.circular(200)),
+          color: MainPageColors.thirdContainerBoxDecorationColor,
+          borderRadius: BorderRadiusDirectional.circular(
+              MainPageConstants.thirdContainerBorderRadius)),
       child: const Center(
           child: Text(
-        _thirdContainerText,
+        MainPageStrings.thirdContainerText,
         style: _thirdContainerTextStyle,
         textAlign: TextAlign.center,
       )),
@@ -45,15 +49,16 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: _appBarBackgroundColor,
+        backgroundColor: MainPageColors.appBarBackgroundColor,
         actions: [
           IconButton(
               onPressed: () => Navigator.pushNamed(context, '/profile'),
-              icon: Image.asset('assets/button.png'))
+              icon: Image.asset(MainPageAssets.buttonImage))
         ],
       ),
       body: ListView.separated(
-          itemCount: 3,
+          itemCount: containers.length,
           itemBuilder: (context, index) => containers[index],
-          separatorBuilder: (context, index) => const SizedBox(height: 16)));
+          separatorBuilder: (context, index) => const SizedBox(
+              height: MainPageConstants.sizedBoxBetweenContainersHeight)));
 }
