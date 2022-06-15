@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
+import '../constants/common_colors.dart';
 import 'main_page_assets.dart';
 import 'main_page_colors.dart';
 import 'main_page_constants.dart';

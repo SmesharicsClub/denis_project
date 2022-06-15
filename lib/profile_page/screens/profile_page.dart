@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/constants/colors.dart';
+import '../../common/constants/common_colors.dart';
 import 'profile_page_strings.dart';
 
 class ProfilePage extends StatelessWidget {
