@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const Color _appBarBackgroundColor = Color(0xFF121212);
-const String _imageUrl = r'https://picsum.photos/250?image=9';
+import '../../common/constants/common_colors.dart';
+import 'profile_page_strings.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({required this.title, Key? key}) : super(key: key);
@@ -12,10 +12,10 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: _appBarBackgroundColor,
+        backgroundColor: CommonColors.appBarBackgroundColor,
       ),
       body: Container(
         alignment: Alignment.center,
-        child: Image.network(_imageUrl),
+        child: Image.network(ProfilePageStrings.imageUrl),
       ));
 }
