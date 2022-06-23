@@ -1,17 +1,15 @@
 class SongStorage {
-  final Map<int, String> storage = {
-    1: '''
-    { 
-      "id": 1,
-      "name": "Some name",
-      "url": "Some url",
-      "author": "Some author",
-    }'''
+  final Map<int, Map<String, dynamic>> storage = {
+    1: <String, dynamic>{
+      'id': 1,
+      'name': 'Some name',
+      'url': 'Some url',
+      'author': 'Some author',
+    }
   };
 
-  String? getSongJsonById(int id) =>
-      storage.containsKey(id) ? storage[id] : null;
+  Map<String, dynamic> getSongJsonById(int id) => storage[id]!;
 
-  List<String>? getAllSongsJsons() =>
-      storage.isEmpty ? null : List<String>.from(storage.values);
+  List<Map<String, dynamic>> getAllSongsJsons() =>
+      List<Map<String, dynamic>>.from(storage.values);
 }
