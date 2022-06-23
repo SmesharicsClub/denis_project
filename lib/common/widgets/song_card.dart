@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import '../../best_music_app_icons.dart';
 
 class SongCard extends StatelessWidget {
-  const SongCard({Key? key}) : super(key: key);
+  const SongCard({required this.title, required this.singer, Key? key})
+      : super(key: key);
+
+  final String title;
+  final String singer;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -39,9 +43,9 @@ class SongCard extends StatelessWidget {
               children: [
                 Container(
                     margin: const EdgeInsets.only(top: 15),
-                    child: const Text(
-                      'Музика - музика',
-                      style: TextStyle(
+                    child: Text(
+                      title,
+                      style: const TextStyle(
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.normal,
@@ -50,9 +54,9 @@ class SongCard extends StatelessWidget {
                     )),
                 Container(
                     margin: const EdgeInsets.only(top: 8, bottom: 10),
-                    child: const Text(
-                      'Исполнитель - полнитель',
-                      style: TextStyle(
+                    child: Text(
+                      singer,
+                      style: const TextStyle(
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w300,
                           fontStyle: FontStyle.normal,
