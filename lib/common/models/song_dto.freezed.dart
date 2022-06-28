@@ -23,6 +23,7 @@ mixin _$SongDto {
   String get name => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(defaultValue: 'Неизвестен')
   String get author => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,7 +35,11 @@ mixin _$SongDto {
 abstract class $SongDtoCopyWith<$Res> {
   factory $SongDtoCopyWith(SongDto value, $Res Function(SongDto) then) =
       _$SongDtoCopyWithImpl<$Res>;
-  $Res call({String name, String url, int id, String author});
+  $Res call(
+      {String name,
+      String url,
+      int id,
+      @JsonKey(defaultValue: 'Неизвестен') String author});
 }
 
 /// @nodoc
@@ -79,7 +84,11 @@ abstract class _$$_SongDtoCopyWith<$Res> implements $SongDtoCopyWith<$Res> {
           _$_SongDto value, $Res Function(_$_SongDto) then) =
       __$$_SongDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String url, int id, String author});
+  $Res call(
+      {String name,
+      String url,
+      int id,
+      @JsonKey(defaultValue: 'Неизвестен') String author});
 }
 
 /// @nodoc
@@ -126,7 +135,7 @@ class _$_SongDto with DiagnosticableTreeMixin implements _SongDto {
       {required this.name,
       required this.url,
       required this.id,
-      this.author = 'Неизвестен'});
+      @JsonKey(defaultValue: 'Неизвестен') required this.author});
 
   factory _$_SongDto.fromJson(Map<String, dynamic> json) =>
       _$$_SongDtoFromJson(json);
@@ -138,7 +147,7 @@ class _$_SongDto with DiagnosticableTreeMixin implements _SongDto {
   @override
   final int id;
   @override
-  @JsonKey()
+  @JsonKey(defaultValue: 'Неизвестен')
   final String author;
 
   @override
@@ -190,10 +199,11 @@ class _$_SongDto with DiagnosticableTreeMixin implements _SongDto {
 
 abstract class _SongDto implements SongDto {
   const factory _SongDto(
-      {required final String name,
-      required final String url,
-      required final int id,
-      final String author}) = _$_SongDto;
+          {required final String name,
+          required final String url,
+          required final int id,
+          @JsonKey(defaultValue: 'Неизвестен') required final String author}) =
+      _$_SongDto;
 
   factory _SongDto.fromJson(Map<String, dynamic> json) = _$_SongDto.fromJson;
 
@@ -204,6 +214,7 @@ abstract class _SongDto implements SongDto {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
+  @JsonKey(defaultValue: 'Неизвестен')
   String get author => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -10,7 +12,7 @@ class SongDto with _$SongDto {
       {required String name,
       required String url,
       required int id,
-      @Default('Неизвестен') String author}) = _SongDto;
+      @JsonKey(defaultValue: 'Неизвестен') required String author}) = _SongDto;
 
   factory SongDto.fromJson(Map<String, dynamic> json) =>
       _$SongDtoFromJson(json);
