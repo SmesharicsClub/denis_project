@@ -3,8 +3,10 @@ import '../models/song_dto.dart';
 import '../services/song_storage.dart';
 
 class SongRepository {
+  final _songStorage = SongStorage();
+
   Song getSongById(int id) {
-    final songDto = SongDto.fromJson(SongStorage().getSongJsonById(id));
+    final songDto = SongDto.fromJson(_songStorage.getSongJsonById(id));
 
     return Song(
         name: songDto.name,
@@ -13,7 +15,7 @@ class SongRepository {
         author: songDto.author);
   }
 
-  List<Song> getAllSongs() => SongStorage()
+  List<Song> getAllSongs() => _songStorage
       .getAllSongsJsons()
       .map((songJson) => SongDto.fromJson(songJson))
       .map((songDto) => Song(
