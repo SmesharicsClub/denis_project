@@ -5,17 +5,17 @@ import '../services/song_storage.dart';
 class SongRepository {
   final _songStorage = SongStorage();
 
-  Song getSongById(int id) {
+  Future<Song> getSongById(int id) {
     final songDto = SongDto.fromJson(_songStorage.getSongJsonById(id));
 
-    return Song(
+    return Future(() => Song(
         name: songDto.name,
         url: songDto.url,
         id: songDto.id,
-        author: songDto.author);
+        author: songDto.author));
   }
 
-  List<Song> getAllSongs() => _songStorage
+  Future<List<Song>> getAllSongs() => Future(() => _songStorage
       .getAllSongsJsons()
       .map((songJson) => SongDto.fromJson(songJson))
       .map((songDto) => Song(
@@ -23,5 +23,5 @@ class SongRepository {
           url: songDto.url,
           id: songDto.id,
           author: songDto.author))
-      .toList();
+      .toList());
 }
