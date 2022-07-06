@@ -16,7 +16,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  late List<Song> _songList;
+  late Future<List<Song>> _songList;
   final _songRepo = SongRepository();
 
   @override
@@ -36,13 +36,61 @@ class _MainPageState extends State<MainPage> {
               icon: Image.asset(MainPageAssets.buttonImage))
         ],
       ),
-      body: ListView.separated(
-        itemCount: _songList.length,
-        padding: const EdgeInsets.only(top: 10.0),
-        itemBuilder: (context, index) => SongCard(
-            title: _songList[index].name, singer: _songList[index].author),
-        separatorBuilder: (context, index) => const SizedBox(
-          height: 10.0,
-        ),
-      ));
+      body: FutureBuilder<List<Song>>(
+          future: _songList,
+          builder: (context, snapshot) {
+            Widget children;
+            if (snapshot.connectionState == ConnectionState.done) {
+              if (snapshot.hasError) {
+                children = Center(
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                      Text(
+                        snapshot.error.toString(),
+                        style: const TextStyle(
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20),
+                      )
+                    ]));
+              } else {
+                children = snapshot.data!.isEmpty
+                    ? Center(
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                            Text(
+                              'No Songs Loaded',
+                              style: TextStyle(
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20),
+                            )
+                          ]))
+                    : ListView.separated(
+                        itemCount: snapshot.data!.length,
+                        padding: const EdgeInsets.only(top: 10.0),
+                        itemBuilder: (context, index) => SongCard(
+                            title: snapshot.data![index].name,
+                            singer: snapshot.data![index].author),
+                        separatorBuilder: (context, index) => const SizedBox(
+                          height: 10.0,
+                        ),
+                      );
+              }
+            } else {
+              children = Center(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                    SizedBox(
+                      width: 120,
+                      height: 120,
+                      child: CircularProgressIndicator(),
+                    )
+                  ]));
+            }
+            return children;
+          }));
 }
